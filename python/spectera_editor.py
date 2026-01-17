@@ -2,6 +2,12 @@
 """
 Spectera Base Station Settings Transfer Tool
 Transfers device settings from one base station to another.
+
+Copyright (C) 2024
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 """
 
 import json
@@ -440,7 +446,7 @@ class SpecteraEditor:
         if output_filename:
             try:
                 with open(output_filename, 'w') as f:
-                    json.dump(output_data, f, indent=2)
+                    json.dump(output_data, f)  # Minified to match original base station format
                 
                 device_count = len(output_data.get('pairedDevices', []))
                 self.update_status(f"Successfully saved: {os.path.basename(output_filename)}")

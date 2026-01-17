@@ -1,5 +1,11 @@
 // Spectera Base Station Settings Transfer Tool
 // Web version - runs entirely in the browser
+// 
+// Copyright (C) 2024
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
 
 let sourceData = null;
 let targetData = null;
@@ -305,8 +311,8 @@ function generateOutput() {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19).replace('T', '_');
     const filename = `Spectera_Setup_${timestamp}.json`;
     
-    // Download file
-    const blob = new Blob([JSON.stringify(outputData, null, 2)], { type: 'application/json' });
+    // Download file (minified to match original base station format)
+    const blob = new Blob([JSON.stringify(outputData)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;

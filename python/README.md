@@ -36,3 +36,9 @@ Run `python spectera_editor.py` or double-click the file if Python is associated
 - `editortest.json` - Example output file
 
 See the main `README.md` in the parent directory for full documentation.
+
+## License
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+See the [LICENSE](../LICENSE) file in the parent directory for full license text.
