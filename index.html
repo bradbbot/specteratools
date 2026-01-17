@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spectera Base Station Settings Transfer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Spectera Base Station Settings Transfer</h1>
+            <p class="subtitle">Transfer device settings from one base station to another</p>
+        </header>
+
+        <div class="file-selection">
+            <h2>File Selection</h2>
+            
+            <div class="file-input-group">
+                <label for="source-file">Source File (Original Base Station):</label>
+                <div class="file-input-wrapper">
+                    <input type="file" id="source-file" accept=".json" />
+                    <span id="source-filename" class="filename">No file selected</span>
+                </div>
+            </div>
+
+            <div class="file-input-group">
+                <label for="target-file">Target File (Destination Base Station):</label>
+                <div class="file-input-wrapper">
+                    <input type="file" id="target-file" accept=".json" />
+                    <span id="target-filename" class="filename">No file selected</span>
+                </div>
+                <div id="target-device-count" class="device-count">Number of Portable devices available: 0</div>
+            </div>
+        </div>
+
+        <div class="mode-selection">
+            <h2>Operation Mode</h2>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="mode" value="transfer_selected" checked>
+                    Transfer Selected Devices (map settings from old UIDs to new UIDs)
+                </label>
+                <label>
+                    <input type="radio" name="mode" value="transfer_all">
+                    Transfer All Devices (automatically transfer all devices)
+                </label>
+            </div>
+        </div>
+
+        <div class="device-selection">
+            <h2>Select Devices to Transfer</h2>
+            <div class="select-all-wrapper">
+                <label>
+                    <input type="checkbox" id="select-all">
+                    Select All
+                </label>
+            </div>
+            <div id="device-list" class="device-list">
+                <p class="placeholder">Load a source file to see devices</p>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button id="generate-btn" class="btn btn-primary" disabled>Generate Output File</button>
+        </div>
+
+        <div id="status" class="status">Ready</div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
