@@ -1,0 +1,5 @@
+# No external dependencies required
+# This application uses only Python standard library modules:
+# - tkinter (GUI - included with Python on most systems)
+# - json (JSON parsing - standard library)
+# - os (file operations - standard library)
