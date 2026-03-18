@@ -264,22 +264,19 @@ function generateOutput() {
     // Start with target data
     const outputData = JSON.parse(JSON.stringify(targetData));
     
-    // Create UID mapping: map source devices to target devices by position
+    // Create UID mapping: map selected source devices to target devices by selection order
     const uidMapping = {};
-    const sourceDevices = sourceData.pairedDevices || [];
-    const selectedUids = new Set(selectedDevices.map(d => d.mtUid));
-    
     let mappedCount = 0;
-    sourceDevices.forEach((sourceDevice, i) => {
+    selectedDevices.forEach((sourceDevice, selectedIndex) => {
         const sourceUid = sourceDevice.mtUid;
-        if (selectedUids.has(sourceUid)) {
-            if (i < targetDevices.length) {
-                const targetUid = targetDevices[i].mtUid;
-                uidMapping[sourceUid] = targetUid;
-                mappedCount++;
-            } else {
-                uidMapping[sourceUid] = sourceUid;
-            }
+        if (sourceUid === undefined || sourceUid === null) return;
+        
+        if (selectedIndex < targetDevices.length) {
+            const targetUid = targetDevices[selectedIndex].mtUid;
+            uidMapping[sourceUid] = targetUid;
+            mappedCount++;
+        } else {
+            uidMapping[sourceUid] = sourceUid;
         }
     });
     
