@@ -37,10 +37,11 @@ This tool allows you to port portable device settings from one Spectera base sta
 ## Quick Start
 
 ### Web Version
-1. Open `index.html` in your web browser
-2. Select source and target files
-3. Choose devices to transfer
-4. Download the output file
+1. Open the web tool at [`https://bradbbot.github.io/specteratools/`](https://bradbbot.github.io/specteratools/)
+2. Or open `index.html` locally in your web browser
+3. Select source and target files
+4. Choose devices to transfer
+5. Download the output file
 
 ### Python Version
 See `python/README.md` for detailed instructions.
